@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="alert alert-dark" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <%if flash[:alert]%>
+      <div class="alert alert-danger" role="alert">
+        <%= alert%>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
