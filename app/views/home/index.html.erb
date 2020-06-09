@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container mt-5">
+  <div class="jumbotron text-center">
+    <i class="fas fa-money-check-alt fa-5x text-info" ></i>
+    <p><span class="brand-size">Expenses Tracker</span></p>
+    <p>Expenses tracker helps you keep track of your daily expenses. Create your entries, create categories and view 
+    expenses of family and friends.</p>
+    <%= link_to 'Login', new_user_session_path, class:"btn btn-success form-control" %>
+    <%= link_to 'Sign up', new_user_registration_path, class:"btn btn-info form-control mt-3" %>
+  </div>
+</div>
