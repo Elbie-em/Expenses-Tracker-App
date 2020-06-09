@@ -1,6 +1,46 @@
 <div class="container mt-5 text-center">
   <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.email,class:"rounded-circle")%>
   <p class="text-white p-3"><%=current_user.email %> </p>
-  
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-hand-holding-usd fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">All My Expenses</p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-door-open fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">External Expenses</p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-object-group fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">Groups</p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-users fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">Friends Expenses</p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
   <%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"btn btn-danger form-control"%>
 </div>
