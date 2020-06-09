@@ -1,1 +1,11 @@
 @import "bootstrap";
+
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.app-background {
+  background-image: linear-gradient( rgba(11,49,74,1), rgba(30,86,137,1));
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
