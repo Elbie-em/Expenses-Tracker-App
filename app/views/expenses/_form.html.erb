@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class:"text-dark" %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+  <div class="form-group">
+    <%= form.label :amount, class:"text-dark" %>
+    <%= form.number_field :amount, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :group_id %>
-    <%= form.text_field :group_id %>
+  <div class="form-group">
+    <%= form.label 'Group' %>
+    <select name="expense[group_id]" class="custom-select" id="inputGroupSelect01">
+      <option selected>Choose...</option>
+      <% Group.all.each do |group| %>
+      <option value="<%= group.id %>"><%= group.name %></option>
+      <% end %>
+      </select>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save', class: "btn btn-success form-control" %>
   </div>
 <% end %>
