@@ -1,4 +1,4 @@
-<%= form_with(model: group, local: true) do |form| %>
+<%= form_with(model: group, local: true, class:"p-3") do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -11,22 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class:"text-dark pl-3" %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
-
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <%= form.label :icon, class:"text-dark pl-3" %>
+  <div class="input-group mb-3">
+    <img class="select-icon" src="https://desight.pro/upload/img/linerix/travel-577444168bab7-big.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://desight.pro/upload/img/linerix/travel-577444168bab7-big.png") %></span>
+    <img class="select-icon" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-2/512/money_bag_dollar.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn3.iconfinder.com/data/icons/business-and-finance-2/512/money_bag_dollar.png") %></span>
+    <img class="select-icon" src="https://image.flaticon.com/icons/png/512/84/84072.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://image.flaticon.com/icons/png/512/84/84072.png") %></span>
+    <img class="select-icon" src="https://toppng.com/uploads/preview/font-car-svg-png-icon-free-download-icon-car-11563232486o4ytppwzhy.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://toppng.com/uploads/preview/font-car-svg-png-icon-free-download-icon-car-11563232486o4ytppwzhy.png") %></span>
+    <img class="select-icon" src="https://cdn1.iconfinder.com/data/icons/fly-airbus-and-aeroplane/154/air-plane-fly-aeroplane-airbus-512.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn1.iconfinder.com/data/icons/fly-airbus-and-aeroplane/154/air-plane-fly-aeroplane-airbus-512.png") %></span>
+    <img class="select-icon" src="https://cdn4.iconfinder.com/data/icons/business-3-4/512/laptop-512.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn4.iconfinder.com/data/icons/business-3-4/512/laptop-512.png") %></span>
+    <img class="select-icon" src="https://www.freeiconspng.com/uploads/exercise-icon-9.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://www.freeiconspng.com/uploads/exercise-icon-9.png") %></span>
+    <img class="select-icon" src="https://cdn2.iconfinder.com/data/icons/party-36/100/Party-01-512.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn2.iconfinder.com/data/icons/party-36/100/Party-01-512.png") %></span>
+    <img class="select-icon" src="https://www.pngitem.com/pimgs/m/521-5216062_shopping-cart-transparent-background-shopping-cart-icon-png.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://www.pngitem.com/pimgs/m/521-5216062_shopping-cart-transparent-background-shopping-cart-icon-png.png") %></span>
+    <img class="select-icon" src="https://cdn1.iconfinder.com/data/icons/tools-65/100/tool-17-512.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn1.iconfinder.com/data/icons/tools-65/100/tool-17-512.png") %></span>
+    <img class="select-icon" src="https://cdn3.iconfinder.com/data/icons/business-blue-series-set-10/128/1-46-512.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://cdn3.iconfinder.com/data/icons/business-blue-series-set-10/128/1-46-512.png") %></span>
+     <img class="select-icon" src="https://www.kindpng.com/picc/m/126-1260580_game-fun-entertainment-mask-identical-entertainment-game-icon.png" alt="icon">
+    <span class="push-b"><%= radio_button("group", "icon", "https://www.kindpng.com/picc/m/126-1260580_game-fun-entertainment-mask-identical-entertainment-game-icon.png") %></span>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save", class:"btn btn-success form-control"%>
   </div>
 <% end %>

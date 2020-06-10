@@ -8,7 +8,7 @@
   width: 75vw;
 }
 .app-background {
-  background-image: linear-gradient( rgba(11,49,74,1), rgba(30,86,137,1));
+  background-image: linear-gradient( rgb(14, 80, 124), rgba(30,86,137,1));
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
@@ -39,6 +39,59 @@
   top: 5px;
 }
 
+.g-bg {
+  background-color: #f1f3f2;
+  height: 80%;
+  overflow-y: auto; 
+}
+
 .pd {
   padding: 10px;
+}
+
+.pd-g {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.pd-g:hover {
+  text-decoration: none;
+  background-color: #e2e2e2;
+}
+
+.thumb-size {
+  width: 100px;
+  height: 100px;
+}
+
+.create-button-area{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #60b624;
+  padding: 15px;
+}
+
+.create-button {
+  background-color: #60b624;
+  height: 80%;
+  width: 95%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.select-icon {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.push-b {
+  position: relative;
+  top:10px;
+  margin-left: 10px;
 }

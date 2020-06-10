@@ -1,5 +1,7 @@
-<h1>New Group</h1>
-
-<%= render 'form', group: @group %>
-
-<%= link_to 'Back', groups_path %>
+<h1 class="text-white text-center">Groups</h1>
+<div class="g-bg p-3">
+  <%= render 'form', group: @group %>
+  <p class="text-center">
+  <%= link_to 'Back', groups_path %>
+  </p>
+</div>

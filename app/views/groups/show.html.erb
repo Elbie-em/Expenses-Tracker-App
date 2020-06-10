@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-white text-center"><%= @group.name %> Group Transactions</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
+<div class="g-bg p-3">
+<%= link_to 'Edit Group', edit_group_path(@group),class:"btn btn-info form-control" %>
+<p class="text-center">
+  <%= link_to 'Back', groups_path %>
 </p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= @group.icon %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+</div>
