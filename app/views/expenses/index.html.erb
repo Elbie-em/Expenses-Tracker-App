@@ -2,11 +2,11 @@
 
 <div class="g-bg">
   <div class="total-div border-bottom border-muted bg-light">
-    <span class="p-3 float-left">Total</span><span class="p-3 float-right font-weight-bold">$ 10</span>
+    <span class="p-3 float-left">Total</span><span class="p-3 float-right font-weight-bold">€ <%= @total%></span>
   </div>
   <div class="p-3">
-    <% @expenses.each do |expense| %>
-      <a href= "expenses/<%=expense.id%>" class="bg-light media border border-muted pd-g">
+    <% @user_expenses.each do |expense| %>
+      <a href= "expenses/<%=expense.id%>/edit" class="bg-light media border border-muted pd-g mb-3">
         <img src="<%=expense.group.icon%>" class="thumb-size mr-3" alt="icon">
         <div class="media-body">
           <div class="float-left">
@@ -18,9 +18,6 @@
             <span class="p-3 font-weight-bold expense-a text-dark">€ <%=expense.amount%></span>
           </div>
         </div>
-        <%= link_to 'Show', expense %>
-        <%= link_to 'Edit', edit_expense_path(expense) %>
-        <%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %>
       </a>
     <% end %>
   </div>
@@ -28,23 +25,4 @@
 <div class="create-button-area text-center">
   <%= button_to 'Create New', new_expense_path,method: :get,class:"create-button border border-white text-white" %>
 </div>
-<!--
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.user %></td>
-        <td><%= expense.group %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-
--->

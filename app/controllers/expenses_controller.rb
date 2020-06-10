@@ -1,16 +1,13 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /expenses
   # GET /expenses.json
   def index
-    #@user = User.find_by(id: current_user.id)
-    @expenses = Expense.all
-  end
-
-  # GET /expenses/1
-  # GET /expenses/1.json
-  def show
+    user = User.find_by(id: current_user.id)
+    @user_expenses = user.expenses.all.order(created_at: :desc)
+    @total = @user_expenses.sum(:amount)
   end
 
   # GET /expenses/new
@@ -58,7 +55,7 @@ class ExpensesController < ApplicationController
   def destroy
     @expense.destroy
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      format.html { redirect_to expenses_url, notice: 'Expense was successfully deleted.' }
       format.json { head :no_content }
     end
   end
