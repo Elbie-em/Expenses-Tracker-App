@@ -1,6 +1,6 @@
 <div class="d-flex flex-row justify-content-between p-3">
 <%= link_to '<i class="fas fa-bars fa-2x text-white"></i>'.html_safe, home_main_path %>
-<h1 class="text-white text-center">My Expenses</h1>
+<h2 class="text-white text-center">My Expenses</h2>
 <%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path, method: :delete %>
 </div>
 <div class="d-flex flex-row justify-content-between p-3">
@@ -10,7 +10,7 @@
 </div>
 <div class="g-bg">
   <div class="total-div border-bottom border-muted bg-light">
-    <span class="p-3 float-left">Total</span><span class="p-3 float-right font-weight-bold">€ <%= @total%></span>
+    <span class="p-3 float-left text-muted">Total</span><span class="p-3 float-right font-weight-bold">€ <%= @total%></span>
   </div>
   <div class="p-3">
     <% @user_expenses.each do |expense| %>
@@ -18,9 +18,9 @@
         <img src="<%=expense.group.icon%>" class="thumb-size mr-3" alt="icon">
         <div class="media-body">
           <div class="float-left">
-          <h5 class="mt-3 text-muted"><%= expense.name %></h5>
-          <p class="text-muted">Group name:<%= expense.group.name %></p>
-          <p class="text-muted"><%= expense.created_at.strftime("%d-%b-%Y") %></p>
+          <h6 class="text-muted"><%= expense.name %></h6>
+          <p class="text-muted l-h">Group name:<%= expense.group.name %></p>
+          <span class="text-muted l-h"><%= expense.created_at.strftime("%d-%b-%Y") %></span>
           </div>
           <div class="float-right">
             <span class="p-3 font-weight-bold expense-a text-dark">€ <%=expense.amount%></span>

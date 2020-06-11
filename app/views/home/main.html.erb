@@ -1,7 +1,7 @@
 <div class="container mt-5 text-center">
   <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.email,class:"rounded-circle")%>
-  <p class="text-white p-3"><%=current_user.name %> </p>
 
+  <p class="p-3"><%= link_to current_user.name , edit_user_registration_path(current_user), class:"text-white text-center"%></p>
   <div class="container m-object">
     <div class="m-object-icon">
       <i class="fas fa-hand-holding-usd fa-2x text-white border rounded-circle border-white pd"></i>

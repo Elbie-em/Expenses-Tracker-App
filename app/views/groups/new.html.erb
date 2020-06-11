@@ -1,7 +1,14 @@
-<h1 class="text-white text-center">Groups</h1>
+<div class="d-flex flex-row justify-content-between p-3">
+<%= link_to '<i class="fas fa-bars fa-2x text-white"></i>'.html_safe, home_main_path %>
+<h2 class="text-white text-center">Groups</h2>
+<%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path, method: :delete %>
+</div>
+<div class="d-flex flex-row justify-content-between p-3">
+  <%= link_to '<i class="fas fa-arrow-left fa-2x text-white"></i>'.html_safe, groups_path %>
+  <span class="text-white push-b">Add new group</span>
+  <span class="text-muted push-b">Archives</span>
+</div>
+
 <div class="g-bg p-3">
   <%= render 'form', group: @group %>
-  <p class="text-center">
-  <%= link_to 'Back', groups_path %>
-  </p>
 </div>
