@@ -1,7 +1,7 @@
 <div class="d-flex flex-row justify-content-between p-3">
   <%= link_to '<i class="fas fa-bars fa-2x text-white"></i>'.html_safe, home_main_path %>
   <h1 class="text-center text-white">Groups</h1>
-  <%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path %>
+  <%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path,method: :delete %>
 </div>
 <div class="d-flex flex-row justify-content-between p-3">
   <%= link_to '<i class="fas fa-arrow-left fa-2x text-white"></i>'.html_safe, group_path(@group) %>
