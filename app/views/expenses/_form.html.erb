@@ -25,6 +25,7 @@
     <%= form.label 'Group' %>
     <select name="expense[group_id]" class="custom-select" id="inputGroupSelect01">
       <option selected>Choose...</option>
+      <option value='<%= nil%>' selected>None</option>
       <% Group.all.each do |group| %>
       <option value="<%= group.id %>"><%= group.name %></option>
       <% end %>
