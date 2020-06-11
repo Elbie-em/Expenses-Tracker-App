@@ -4,12 +4,14 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
+
 .line {
   width: 75vw;
 }
 .app-background {
-  background-image: linear-gradient( rgb(14, 80, 124), rgba(30,86,137,1));
-  background-repeat: no-repeat;
+  background: linear-gradient(to left top, rgb(14, 80, 124), rgba(30,86,137,1));
+  background-size: cover;
   height: 100%;
   width: 100%;
 }
@@ -41,7 +43,7 @@
 
 .g-bg {
   background-color: #f1f3f2;
-  height: 75%;
+  height: 500px;
   overflow-y: auto; 
 }
 
