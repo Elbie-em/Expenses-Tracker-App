@@ -6,15 +6,10 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     user = User.find_by(id: current_user.id)
-    @external_user_expenses = user.expenses.where(group_id: nil)
-    @external_total = @user_expenses.sum(:amount)
-  end
-
-  def external_index
-    user = User.find_by(id: current_user.id)
     @user_expenses = user.expenses.where.not(group_id: nil)
     @total = @user_expenses.sum(:amount)
   end
+
 
   # GET /expenses/new
   def new
