@@ -12,7 +12,4 @@
 <div class="g-bg p-3">
   <%= render 'form', expense: @expense %>
   <%= link_to 'Delete', @expense, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-danger form-control mt-3"%>
-  <p class="text-white text-center">
-  <%= link_to 'Back', expenses_path %>
-  </p>
 </div>
