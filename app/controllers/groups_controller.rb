@@ -11,6 +11,9 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    group = Group.find(params[:id])
+    @group_expenses = group.expenses.all.order(created_at: :desc)
+    @total = @group_expenses.sum(:amount)
   end
 
   # GET /groups/new
