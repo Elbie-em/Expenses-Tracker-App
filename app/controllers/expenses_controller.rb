@@ -28,11 +28,13 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
+        if @expense.group_id.nil?
+          format.html { redirect_to home_external_path, notice: 'External expense was successfully created.' }
+        else
+          format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
+        end
       else
         format.html { render :new }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +44,13 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to expenses_path, notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
+        if @expense.group_id.nil?
+          format.html {redirect_to home_external_path, notice: 'External expense was successfully updated.'}
+        else
+          format.html { redirect_to expenses_path, notice: 'Expense was successfully updated.' }
+        end
       else
         format.html { render :edit }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
