@@ -13,5 +13,9 @@ class HomeController < ApplicationController
     @external_user_expenses = user.expenses.where(group_id: nil)
     @external_total =  @external_user_expenses.sum(:amount)
   end
+
+  def friends
+    
+  end
   
 end
