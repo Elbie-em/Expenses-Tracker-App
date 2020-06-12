@@ -1,9 +1,11 @@
+# rubocop:disable Style/GlobalVars
+# rubocop:disable Layout/LineLength:
 require 'rails_helper'
 
 RSpec.describe 'Group Management:', type: :feature do
   before :each do
     $user = User.create!(name: 'example', email: 'user@example.com', password: 'password', password_confirmation: 'password')
-    $group = $user.groups.create!(name:"test group",icon:"https://testicons.com/testicon.png")
+    $group = $user.groups.create!(name: 'test group', icon: 'https://testicons.com/testicon.png')
   end
 
   it 'is creating a group with valid input' do
@@ -48,7 +50,7 @@ RSpec.describe 'Group Management:', type: :feature do
     fill_in 'Password', with: 'password'
     click_on 'Log in'
     visit edit_group_path($group)
-    fill_in "Name", with: 'group test'
+    fill_in 'Name', with: 'group test'
     click_on 'Save'
     visit groups_path
     expect(page).to have_content('group test')
@@ -64,5 +66,7 @@ RSpec.describe 'Group Management:', type: :feature do
     visit groups_path
     expect(page).to_not have_content('test group')
   end
-
 end
+
+# rubocop:enable Style/GlobalVars
+# rubocop:enable Layout/LineLength:

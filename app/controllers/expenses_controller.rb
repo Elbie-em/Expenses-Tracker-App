@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :set_expense, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /expenses
@@ -10,15 +10,13 @@ class ExpensesController < ApplicationController
     @total = @user_expenses.sum(:amount)
   end
 
-
   # GET /expenses/new
   def new
     @expense = Expense.new
   end
 
   # GET /expenses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /expenses
   # POST /expenses.json
@@ -45,7 +43,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.update(expense_params)
         if @expense.group_id.nil?
-          format.html {redirect_to home_external_path, notice: 'External expense was successfully updated.'}
+          format.html { redirect_to home_external_path, notice: 'External expense was successfully updated.' }
         else
           format.html { redirect_to expenses_path, notice: 'Expense was successfully updated.' }
         end
@@ -66,13 +64,14 @@ class ExpensesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def expense_params
-      params.require(:expense).permit(:name, :amount, :group_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_expense
+    @expense = Expense.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def expense_params
+    params.require(:expense).permit(:name, :amount, :group_id)
+  end
 end

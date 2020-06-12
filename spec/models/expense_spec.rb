@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
   let(:user) { User.create!(name: 'john doe', email: 'johndoe@example.com', password: 'azerty012') }
-  let(:group) { user.groups.create!(name:"test_group",icon:"https://testicons.com/testicon.png")}
-  let(:expense) { Expense.create!(name:"test_expense",amount: 24.2,user_id:user.id,group_id: group.id)}
+  let(:group) { user.groups.create!(name: 'test_group', icon: 'https://testicons.com/testicon.png') }
+  let(:expense) { Expense.create!(name: 'test_expense', amount: 24.2, user_id: user.id, group_id: group.id) }
 
   it 'is valid with valid attributes' do
     expect(expense).to be_valid
@@ -30,12 +30,8 @@ RSpec.describe Expense, type: :model do
   end
 
   describe 'Associations' do
-   
     context 'Belonging to existent models' do
       it { should belong_to(:user) }
     end
-    
-
   end
-
 end

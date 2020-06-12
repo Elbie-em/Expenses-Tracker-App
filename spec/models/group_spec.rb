@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   let(:user) { User.create!(name: 'john doe', email: 'johndoe@example.com', password: 'azerty012') }
-  let(:group) { user.groups.create!(name:"test_group",icon:"https://testicons.com/testicon.png")}
+  let(:group) { user.groups.create!(name: 'test_group', icon: 'https://testicons.com/testicon.png') }
 
   it 'is valid with valid attributes' do
     expect(group).to be_valid
@@ -27,5 +27,4 @@ RSpec.describe Group, type: :model do
       it { should belong_to(:user) }
     end
   end
-
 end
