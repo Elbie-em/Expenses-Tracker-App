@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Authentication Management', type: :feature do
-  context 'Signing Up' do
+  context 'Signing Up:' do
     it 'signs me up and sign me in with valid input' do
       visit new_user_registration_path
       fill_in 'Name', with: 'example'
@@ -44,7 +44,7 @@ RSpec.describe 'Authentication Management', type: :feature do
     end
   end
 
-  context 'Signing in' do
+  context 'Signing in:' do
     before :each do
       User.create!(name: 'example', email: 'user@example.com', password: 'password', password_confirmation: 'password')
     end
