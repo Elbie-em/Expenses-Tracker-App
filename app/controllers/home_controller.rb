@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   def external
     user = User.find_by(id: current_user.id)
-    @external_user_expenses = user.expenses.where(group_id: nil)
+    @external_user_expenses = user.expenses.where(group_id: nil).order(created_at: :desc)
     @external_total =  @external_user_expenses.sum(:amount)
   end
 
