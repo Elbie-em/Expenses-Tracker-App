@@ -15,7 +15,8 @@ class HomeController < ApplicationController
   end
 
   def friends
-    
+    @users = User.where.not(id: current_user.id)
+    @expenses = Expense.where.not(user_id: current_user.id)
   end
   
 end
