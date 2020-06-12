@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
 
-  has_many :groups
-  has_many :expenses
+  has_many :groups, dependent: :destroy
+  has_many :expenses, dependent: :destroy
 end

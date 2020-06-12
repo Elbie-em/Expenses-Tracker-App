@@ -23,16 +23,15 @@
 
   <div class="form-group">
     <%= form.label 'Group' %>
-    <select name="expense[group_id]" class="custom-select" id="inputGroupSelect01">
-      <option selected>Choose...</option>
-      <option value='<%= nil%>' selected>None</option>
+    <select id="expense_group_id" name="expense[group_id]" class="custom-select" id="inputGroupSelect01">
+      <option value='<%= nil%>'>None</option>
       <% Group.all.each do |group| %>
-      <option value="<%= group.id %>"><%= group.name %></option>
+        <option value="<%= group.id %>"><%= group.name %></option>
       <% end %>
-      </select>
+    </select>
   </div>
 
-  <div class="actions">
+  <div class="form-group">
     <%= form.submit 'Save', class: "btn btn-success form-control" %>
   </div>
 <% end %>
