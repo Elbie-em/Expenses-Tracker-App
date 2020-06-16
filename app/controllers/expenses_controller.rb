@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   def index
     user = User.find_by(id: current_user.id)
-    @user_expenses = user.expenses.where.not(group_id: nil).order(created_at: :desc)
+    @user_expenses = user.expenses.includes(:group).where.not(group_id: nil).order(created_at: :desc)
     @total = @user_expenses.sum(:amount)
   end
 
