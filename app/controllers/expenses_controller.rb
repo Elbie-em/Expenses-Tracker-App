@@ -26,7 +26,6 @@ class ExpensesController < ApplicationController
       else
         render :new
       end
-    end
   end
 
   def update
@@ -39,13 +38,11 @@ class ExpensesController < ApplicationController
       else
          render :edit
       end
-    end
   end
 
   def destroy
     @expense.destroy
     redirect_to expenses_url, notice: 'Expense was successfully deleted.'
-    end
   end
 
   private

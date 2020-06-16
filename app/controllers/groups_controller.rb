@@ -26,7 +26,6 @@ class GroupsController < ApplicationController
       else
         render :new
       end
-    end
   end
 
   def update
@@ -35,13 +34,11 @@ class GroupsController < ApplicationController
       else
         render :edit 
       end
-    end
   end
 
   def destroy
     @group.destroy
     redirect_to groups_url, notice: 'Group was successfully deleted.'
-    end
   end
 
   private
