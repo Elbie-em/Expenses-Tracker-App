@@ -17,27 +17,27 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.user = current_user
-      if @expense.save
-        if @expense.group_id.nil?
-          redirect_to home_external_path, notice: 'External expense was successfully created.'
-        else
-          redirect_to expenses_path, notice: 'Expense was successfully created.'
-        end
+    if @expense.save
+      if @expense.group_id.nil?
+        redirect_to home_external_path, notice: 'External expense was successfully created.'
       else
-        render :new
+        redirect_to expenses_path, notice: 'Expense was successfully created.'
       end
+    else
+      render :new
+    end
   end
 
   def update
-      if @expense.update(expense_params)
-        if @expense.group_id.nil?
-          redirect_to home_external_path, notice: 'External expense was successfully updated.'
-        else
-          redirect_to expenses_path, notice: 'Expense was successfully updated.'
-        end
+    if @expense.update(expense_params)
+      if @expense.group_id.nil?
+        redirect_to home_external_path, notice: 'External expense was successfully updated.'
       else
-         render :edit
+        redirect_to expenses_path, notice: 'Expense was successfully updated.'
       end
+    else
+      render :edit
+    end
   end
 
   def destroy

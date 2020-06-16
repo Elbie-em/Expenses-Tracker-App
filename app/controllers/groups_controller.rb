@@ -21,19 +21,19 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.user = current_user
-      if @group.save
-        redirect_to groups_path, notice: 'Group was successfully created.'
-      else
-        render :new
-      end
+    if @group.save
+      redirect_to groups_path, notice: 'Group was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
-      if @group.update(group_params)
-        redirect_to @group, notice: 'Group was successfully updated.'
-      else
-        render :edit 
-      end
+    if @group.update(group_params)
+      redirect_to @group, notice: 'Group was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
