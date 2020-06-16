@@ -29,6 +29,16 @@ RSpec.describe Expense, type: :model do
     expect(expense).to_not be_valid
   end
 
+  it 'is not valid with amount greater that 100000' do
+    expense.amount = 120_000
+    expect(expense).to_not be_valid
+  end
+
+  it 'is not valid with amount less than 1 ' do
+    expense.amount = -400
+    expect(expense).to_not be_valid
+  end
+
   describe 'Associations' do
     context 'Belonging to existent models' do
       it { should belong_to(:user) }
