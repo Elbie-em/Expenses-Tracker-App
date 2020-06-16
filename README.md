@@ -24,7 +24,7 @@
 
 ## Live Demo
 
-Visit live demo [here!]()
+Visit live demo [here!](https://calm-eyrie-22100.herokuapp.com/)
 
 ## App Features
 
@@ -93,7 +93,7 @@ Open `http://localhost:3000/` in your browser.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Elbie-em/Expenses-Tracker-App/issues).
 
 ## Show your support
 

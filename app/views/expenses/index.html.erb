@@ -14,7 +14,7 @@
   </div>
   <div class="p-3">
     <% @user_expenses.each do |expense| %>
-      <a href= "expenses/<%=expense.id%>/edit" class="bg-light media border border-muted pd-g mb-3">
+      <a href= "<%=edit_expense_path(expense)%>" class="bg-light media border border-muted pd-g mb-3">
         <img src="<%=expense.group.icon%>" class="thumb-size mr-3" alt="icon">
         <div class="media-body">
           <div class="float-left">
