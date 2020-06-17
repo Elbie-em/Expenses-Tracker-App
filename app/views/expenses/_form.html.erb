@@ -1,0 +1,37 @@
+<%= form_with(model: expense, local: true) do |form| %>
+  <% if expense.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="text-danger"><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+      <% expense.errors.full_messages.each do |message| %>
+        <li class="text-danger"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class:"text-dark" %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amount, class:"text-dark" %>
+    <%= form.number_field :amount, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Group' %>
+    <select id="expense_group_id" name="expense[group_id]" class="custom-select" id="inputGroupSelect01">
+      <option value='<%= nil%>'>None</option>
+      <% Group.all.each do |group| %>
+        <option value="<%= group.id %>"><%= group.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit 'Save', class: "btn btn-success form-control" %>
+  </div>
+<% end %>

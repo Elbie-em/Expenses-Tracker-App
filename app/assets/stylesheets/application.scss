@@ -1,0 +1,124 @@
+@import "bootstrap";
+
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.l-h {
+  line-height: 10px;
+}
+
+.line {
+  width: 75vw;
+}
+.app-background {
+  background: linear-gradient(to left top, rgb(14, 80, 124), rgba(30,86,137,1));
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.brand-size {
+  position: relative;
+  font-size: 30px;
+  margin-left: 5px;
+  bottom: 10px;
+}
+
+.m-object {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+}
+
+.m-object-icon{
+  width: 20%;
+  height: 100%;
+}
+
+.m-object-link {
+  position: relative;
+  font-size: 30px;
+  top: 5px;
+}
+
+.g-bg {
+  background-color: #f1f3f2;
+  height: 500px;
+  overflow-y: auto; 
+}
+
+.g-bg-e {
+  background-color: #f1f3f2;
+  height: 85%;
+  overflow-y: auto; 
+}
+
+.pd {
+  padding: 10px;
+}
+
+.pd-g {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.pd-g:hover {
+  text-decoration: none;
+  background-color: #e2e2e2;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.thumb-size {
+  width: 75px;
+  height: 75px;
+}
+
+.create-button-area{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #60b624;
+  padding: 15px;
+}
+
+.create-button {
+  background-color: #60b624;
+  height: 80%;
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.select-icon {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.push-b {
+  position: relative;
+  top:10px;
+  margin-left: 10px;
+}
+
+.total-div {
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+}
+
+
+.expense-a {
+  position: relative;
+  top: 10px;
+  font-size: 18px;
+}

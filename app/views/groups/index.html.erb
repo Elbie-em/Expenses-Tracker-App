@@ -1,0 +1,26 @@
+<div class="d-flex flex-row justify-content-between p-3">
+<%= link_to '<i class="fas fa-bars fa-2x text-white"></i>'.html_safe, home_main_path %>
+<h2 class="text-white text-center">Groups</h2>
+<%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path, method: :delete%>
+</div>
+<div class="d-flex flex-row justify-content-between p-3">
+  <%= link_to '<i class="fas fa-arrow-left fa-2x text-white"></i>'.html_safe, home_main_path %>
+  <span class="text-white push-b">Most recent</span>
+  <span class="text-muted push-b">Most ancient</span>
+</div>
+
+<div class="g-bg p-3">
+  <% @groups.each do |group| %>
+    <a href= "groups/<%=group.id%>" class="bg-light media border border-muted pd-g mb-3">
+      <img src="<%=group.icon%>" class="thumb-size mr-3" alt="icon">
+      <div class="media-body">
+        <h6 class="text-muted"><%= group.name %></h6>
+        <p class="text-muted"><%= group.created_at.strftime("%d-%b-%Y") %></p>
+      </div>
+    </a>
+  <% end %>
+</div>
+
+<div class="create-button-area text-center">
+  <%= button_to 'Create New', new_group_path,method: :get,class:"create-button border border-white text-white" %>
+</div>

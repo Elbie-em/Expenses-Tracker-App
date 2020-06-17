@@ -1,0 +1,54 @@
+<div class="container mt-5 text-center">
+  <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.email,class:"rounded-circle")%>
+
+  <p class="p-3"><%= link_to current_user.name , edit_user_registration_path(current_user), class:"text-white text-center"%></p>
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-hand-holding-usd fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">
+         <%= link_to 'All my expenses', expenses_path, class:"text-white"%>
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-door-open fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">
+         <%= link_to 'External Expenses', home_external_path, class:"text-white"%>
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-object-group fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">
+       <%= link_to 'All Groups', groups_path, class:"text-white"%>
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-users fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-left ml-3">
+        <%= link_to 'Friends Expenses', home_friends_path, class:"text-white"%>
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"btn btn-danger form-control mb-3"%>
+</div>

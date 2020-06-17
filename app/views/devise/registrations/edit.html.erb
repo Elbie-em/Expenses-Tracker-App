@@ -1,0 +1,51 @@
+<div class="d-flex flex-row justify-content-between p-3">
+  <%= link_to '<i class="fas fa-bars fa-2x text-white"></i>'.html_safe, home_main_path %>
+  <h2 class="text-white text-center">Edit my profile</h2>
+  <%= link_to '<i class="fas fa-sign-out-alt fa-2x text-white"></i>'.html_safe, destroy_user_session_path,method: :delete %>
+</div>
+<div class="container">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group">
+    <%= f.label :name, class:"text-white" %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "name", class:"form-control"  %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password, class:"text-white" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em class="text-info"><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, class:"text-white" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password, class:"text-white" %> <i class="text-info">(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Update", class:"btn btn-success form-control" %>
+  </div>
+<% end %>
+
+<h3 class="text-danger">Cancel my account</h3>
+
+<p><span class="text-danger">Unhappy?</span> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger form-control" %></p>
+</div>
